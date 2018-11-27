@@ -51,7 +51,7 @@ public class CamelRoutes extends RouteBuilder {
                 .setHeader(Exchange.HTTP_METHOD, constant(HttpMethods.POST))
                 .marshal().json(JsonLibrary.Jackson, OrderMessage.class)
                 .convertBodyTo(String.class)
-                .to("http4://localhost:8082/api/payment")
+                .to("http4://payment4.herokuapp.com/api/payment")
                 .unmarshal().json(JsonLibrary.Jackson, OrderMessage.class);
 
         from("direct:shipping").id("Request Shipping")
@@ -70,7 +70,7 @@ public class CamelRoutes extends RouteBuilder {
         .setHeader(Exchange.HTTP_METHOD, constant(HttpMethods.POST))
         .marshal().json(JsonLibrary.Jackson, OrderMessage.class)
         .convertBodyTo(String.class)
-        .to("http4://localhost:8085/api/shipping")
+        .to("http4://shipping3.herokuapp.com/api/shipping")
         .unmarshal().json(JsonLibrary.Jackson, OrderMessage.class);
       
         
@@ -81,7 +81,7 @@ public class CamelRoutes extends RouteBuilder {
                 .removeHeaders("CamelHttp*")
                 .setHeader("Accept", constant("application/json"))
                 .setHeader(Exchange.HTTP_METHOD, constant(HttpMethods.GET))
-                .toD("http4://localhost:8081/api/customer/${header.customerId}")
+                .toD("http4://eshop3.herokuapp.com/api/customer/${header.customerId}")
                 .unmarshal().json(JsonLibrary.Jackson, Customer.class)
                 .endRest();
 
@@ -93,7 +93,7 @@ public class CamelRoutes extends RouteBuilder {
                 .setHeader(Exchange.HTTP_METHOD, constant(HttpMethods.PUT))
                 .marshal().json(JsonLibrary.Jackson, Customer.class)
                 .convertBodyTo(String.class)
-                .toD("http4://localhost:8081/api/loyalty/${header.customerId}{header.orderId}")
+                .toD("http4://eshop3.herokuapp.com/api/loyalty/${header.customerId}{header.orderId}")
                 .endRest();
     }
 }
