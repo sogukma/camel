@@ -32,7 +32,7 @@ public class CamelRoutes extends RouteBuilder {
 
         from("seda:orderFulfillmentProcess").id("Order Fulfillment Process")
                 .to("direct:payment")
-                //.to("direct:inventory");
+                .to("direct:inventory")
                 .to("direct:shipping");
 
         from("direct:payment").id("Request Payment")
@@ -71,6 +71,27 @@ public class CamelRoutes extends RouteBuilder {
         .marshal().json(JsonLibrary.Jackson, OrderMessage.class)
         .convertBodyTo(String.class)
         .to("http4://shipping3.herokuapp.com/api/shipping")
+        .unmarshal().json(JsonLibrary.Jackson, OrderMessage.class);
+        
+        
+        
+        from("direct:inventory").id("Request Inventory")
+        .process(new Processor() {
+            @Override
+            public void process(Exchange exchange) throws Exception {
+                OrderMessage orderMessage = (OrderMessage) exchange.getIn().getBody();
+                System.out.println("dieser order: " + orderMessage.getOrderId()+"customer: "+orderMessage.getCustomerId());
+                orderMessage.setStatus("Inventory Requested");
+                exchange.getIn().setBody(orderMessage);
+            }
+        }).id("Set Inventory Requested Status")
+        .removeHeaders("CamelHttp*")
+        .setHeader("Content-Type", constant("application/json"))
+        .setHeader("Accept", constant("application/json"))
+        .setHeader(Exchange.HTTP_METHOD, constant(HttpMethods.POST))
+        .marshal().json(JsonLibrary.Jackson, OrderMessage.class)
+        .convertBodyTo(String.class)
+        .to("http4://inventory4.herokuapp.com/api/inventory")
         .unmarshal().json(JsonLibrary.Jackson, OrderMessage.class);
       
         
