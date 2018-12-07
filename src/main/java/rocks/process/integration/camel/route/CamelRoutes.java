@@ -85,15 +85,14 @@ public class CamelRoutes extends RouteBuilder {
                 .unmarshal().json(JsonLibrary.Jackson, Customer.class)
                 .endRest();
 
-        rest("/loyalty").consumes("application/json")
-                .put("/{customerId}").type(Customer.class)
-                .route().id("Loyalty Point Management")
-                .removeHeaders("CamelHttp*")
-                .setHeader("Content-Type", constant("application/json"))
-                .setHeader(Exchange.HTTP_METHOD, constant(HttpMethods.PUT))
-                .marshal().json(JsonLibrary.Jackson, Customer.class)
-                .convertBodyTo(String.class)
-                .toD("http4://eshop3.herokuapp.com/api/loyalty/${header.customerId}")
-                .endRest();
+        rest("/loyalty").produces("application/json")
+        .get("/{customerId}").outType(Customer.class)
+        .route().id("Customer Finder")
+        .removeHeaders("CamelHttp*")
+        .setHeader("Accept", constant("application/json"))
+        .setHeader(Exchange.HTTP_METHOD, constant(HttpMethods.GET))
+        .toD("http4://eshop3.herokuapp.com/api/loyalty/${header.customerId}")
+        .unmarshal().json(JsonLibrary.Jackson, Customer.class)
+        .endRest();
     }
 }
