@@ -87,7 +87,7 @@ public class CamelRoutes extends RouteBuilder {
 
         rest("/loyalty").produces("application/json")
         .get("/{customerId}").outType(Customer.class)
-        .route().id("Customer Finder")
+        .route().id("Loyalty Finder")
         .removeHeaders("CamelHttp*")
         .setHeader("Accept", constant("application/json"))
         .setHeader(Exchange.HTTP_METHOD, constant(HttpMethods.GET))
