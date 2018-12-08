@@ -17,9 +17,21 @@ public class Customer {
 
 	private Long customerId;
 	private String name;
-	private String vorname;
-	private int birthdate;
+	private String firstname;
+	private int age;
 
+	public String getFirstname() {
+		return firstname;
+	}
+	public void setFirstname(String firstname) {
+		this.firstname = firstname;
+	}
+	public int getAge() {
+		return age;
+	}
+	public void setAge(int age) {
+		this.age = age;
+	}
 	private int loyalityPoints;
 
 	private List<Orders> orders;
@@ -45,24 +57,14 @@ public class Customer {
 	public void setName(String name) {
 		this.name = name;
 	}
-	public String getVorname() {
-		return vorname;
-	}
-	public void setVorname(String vorname) {
-		this.vorname = vorname;
-	}
+
 	public int getLoyalityPoints() {
 		return loyalityPoints;
 	}
 	public void setLoyalityPoints(int loyalityPoints) {
 		this.loyalityPoints = loyalityPoints;
 	}
-	public int getBirthdate() {
-		return birthdate;
-	}
-	public void setBirthdate(int birthdate) {
-		this.birthdate = birthdate;
-	}
+
 
 	
 }
