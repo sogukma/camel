@@ -15,11 +15,13 @@ Wenn im Browser der Link <https://eshop3.herokuapp.com/order/> eingegeben wird,
 wird eine Bestellung abgegeben, welcher dann mithilfe Camels automatisch eine
 Zahlung, Lieferung und Kommissionierung auslöst.
 
-Auf der folgenden Seite ist die gesamte Camel-Route aufgeführt.
+Nachfolgend ist der gesamte Prozess in BPMN abgebildet.
+Zuerst wird über den Browser der Prozess mit einem "/order"-Befehl im E-Shop ausgelöst. Dieser steuert die Camel-Route an, welche dann den gesamten restlichen Programmablauf führt: Dabei werden die Microservices Payment, Shipping und Inventory angesteurt.
+Payment, Shipping und Inventory benutzen E-Shop um Kundendaten zu holen (siehe "findCustomer") und/oder Loyalitätspunkte des Kunden zu ändern (siehe "editLoyalityBalance").
 
-![](diagrams/CamelRoute.png)
+![](diagrams/BPMNRoute.png)
 
-Abbildung 1 gesamte Camel-Route
+Abbildung 1 gesamter Prozess in BPMN
 
 Ablageort
 =========
@@ -401,7 +403,7 @@ Abbildungs- und Tabellenverzeichnis
 Abbildungen
 -----------
 
-[Abbildung 1 gesamte Camel-Route 7](#_Toc532072859)
+[Abbildung 1 gesamter Prozess in BPMN 7](#_Toc532072859)
 
 [Abbildung 2 UseCase Diagramm 8](#_Toc532072860)
 
