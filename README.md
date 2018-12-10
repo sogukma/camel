@@ -34,7 +34,8 @@ Die Microservices befinden sich auf Heroku auf folgenden Links:
     -   Bestellung abgeben: https://eshop3.herokuapp.com/order/
 
     -   PostgreSQL-Datenbank: <https://eshop3.herokuapp.com/console>
-
+        -   Datenbanktyp unter "Saved Setting" auf "Generic PostgreSQL" stellen
+            
         -   Link:
             jdbc:postgresql://ec2-54-75-231-156.eu-west-1.compute.amazonaws.com:5432/dp8lnq31r5456
 
@@ -46,7 +47,8 @@ Die Microservices befinden sich auf Heroku auf folgenden Links:
 -   Payment (https://payment4.herokuapp.com/)
 
     -   PostgreSQL-Datenbank: <https://payment4.herokuapp.com/console>
-
+        -   Datenbanktyp unter "Saved Setting" auf "Generic PostgreSQL" stellen
+            
         -   Link:
             jdbc:postgresql://ec2-54-247-119-167.eu-west-1.compute.amazonaws.com:5432/ddfoorq2e76vh4
 
@@ -58,7 +60,8 @@ Die Microservices befinden sich auf Heroku auf folgenden Links:
 -   Shipping (https://shipping3.herokuapp.com/)
 
     -   PostgreSQL-Datenbank: <https://shipping3.herokuapp.com/console/>
-
+        -   Datenbanktyp unter "Saved Setting" auf "Generic PostgreSQL" stellen
+            
         -   Link:
             jdbc:postgresql://ec2-54-246-117-62.eu-west-1.compute.amazonaws.com:5432/db6aou0e8v6lf5
 
@@ -70,7 +73,8 @@ Die Microservices befinden sich auf Heroku auf folgenden Links:
 -   Inventory(https://inventory4.herokuapp.com/)
 
     -   PostgreSQL-Datenbank <https://inventory4.herokuapp.com/console/>
-
+        -   Datenbanktyp unter "Saved Setting" auf "Generic PostgreSQL" stellen
+            
         -   Link:
             jdbc:postgresql://ec2-54-247-119-167.eu-west-1.compute.amazonaws.com:5432/ddj0eaokfv76fu
 
