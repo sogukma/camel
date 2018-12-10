@@ -17,7 +17,7 @@ Zahlung, Lieferung und Kommissionierung auslöst.
 
 Auf der folgenden Seite ist die gesamte Camel-Route aufgeführt.
 
-![](media/e65fce0146867a3e208c83cec132dc60.tmp)
+![](diagrams/CamelRoute.png)
 
 Abbildung 1 gesamte Camel-Route
 
@@ -246,7 +246,9 @@ Domain-Objekte
 OrderMessage
 ------------
 
-![](media/d56e8c21a532aa27ad5c395be456f10d.tmp)
+![](diagrams/OrderMessage.png)
+
+Abbildung 3 Inhalt des OrderMessage
 
 Die OrderMessage ist eine Klasse, das in allen fünf Microservices implementiert
 ist. Deren Objekte werden hin und wieder in JSON umgewandelt und über REST-APIs
@@ -259,7 +261,9 @@ Domain-Objekte im E-Shop
 Die Domain-Objekte im E-Shop besteht aus den Tabellen «Customer», «Orders» und
 «Pretzel». Diese sind im E-Shop entsprechend in der Datenbank abgebildet.
 
-Abbildung 5 Domain-Objekte des E-Shops
+![](diagrams/EShopClasses.png)
+
+Abbildung 4 Domain-Objekte des E-Shops
 
 Es sind u.a. folgende erklärungsbedürftige Attribute vorhanden:
 
@@ -289,7 +293,9 @@ Es sind u.a. folgende erklärungsbedürftige Attribute vorhanden:
 
 -   cardTransactionId: Fake TransaktionsId für die Zahlung
 
-Abbildung 6 Domain-Objekt Transaction
+![](diagrams/Transaction.png)
+
+Abbildung 5 Domain-Objekt Transaction
 
 Domain Objekte im Shipping
 --------------------------
@@ -306,7 +312,9 @@ Es sind u.a. folgende erklärungsbedürftige Attribute vorhanden:
     «shipped» gesetzt; wenn nicht genügend Menge auf Lager vorhanden ist auf «in
     queue».
 
-Abbildung 7 Domain-Objekt ShippingBill
+![](diagrams/ShippingBill.png)
+
+Abbildung 6 Domain-Objekt ShippingBill
 
 Domain Objekte im Inventory
 ---------------------------
@@ -323,7 +331,9 @@ Es sind u.a. folgende Attribute vorhanden:
     Status auf «picked» gesetzt; wenn nicht genügend Menge auf Lager vorhanden
     ist auf «in queue».
 
-Abbildung 8 Domain-Objekt PickingList
+![](diagrams/ShippingDB.png)
+
+Abbildung 7 Domain-Objekt PickingList
 
 Verwendung von Libraries/Frameworks
 ===================================
@@ -351,21 +361,21 @@ Screenshots
 Nachfolgend sind Screenshots von Datenbankeinträgen aufgeführt, die nach zwei
 Bestellungseingängen entstanden sind.
 
-![](media/68a62cb3a37933675e9fef8557bccfdf.tmp)
+![](diagrams/EShopDB.png)
 
-Abbildung 9 Datenbankeinträge E-Shop
+Abbildung 8 Datenbankeinträge E-Shop
 
-![](media/0cf8ea4cb42cb4c8f2592e6b9ec31b58.tmp)
+![](diagrams/PaymentDB.png)
 
-Abbildung 10 Datenbankeinträge Payment
+Abbildung 9 Datenbankeinträge Payment
 
-![](media/0955305acf726e964efcae93b64c0bf2.tmp)
+![](diagrams/ShippingDB.png)
 
-Abbildung 11 Datenbankeinträge Shipping
+Abbildung 10 Datenbankeinträge Shipping
 
-![](media/5609efa7bf6171e20233555f248e8349.tmp)
+![](diagrams/InventoryDB.png)
 
-Abbildung 12 Datenbankeinträge Inventory
+Abbildung 11 Datenbankeinträge Inventory
 
 Testfälle
 =========
@@ -398,21 +408,21 @@ Abbildungen
 [Abbildung 3 Inhalt des OrderMessage
 9](../../Necati/Dropbox/Pretzel/Pretzel%20Doku.docx#_Toc532072861)
 
-[Abbildung 5 Domain-Objekte des E-Shops 10](#_Toc532072862)
+[Abbildung 4 Domain-Objekte des E-Shops 10](#_Toc532072862)
 
-[Abbildung 6 Domain-Objekt Transaction 11](#_Toc532072863)
+[Abbildung 5 Domain-Objekt Transaction 11](#_Toc532072863)
 
-[Abbildung 7 Domain-Objekt ShippingBill 11](#_Toc532072864)
+[Abbildung 6 Domain-Objekt ShippingBill 11](#_Toc532072864)
 
-[Abbildung 8 Domain-Objekt PickingList 12](#_Toc532072865)
+[Abbildung 7 Domain-Objekt PickingList 12](#_Toc532072865)
 
-[Abbildung 9 Datenbankeinträge E-Shop 13](#_Toc532072866)
+[Abbildung 8 Datenbankeinträge E-Shop 13](#_Toc532072866)
 
-[Abbildung 10 Datenbankeinträge Payment 13](#_Toc532072867)
+[Abbildung 9 Datenbankeinträge Payment 13](#_Toc532072867)
 
-[Abbildung 11 Datenbankeinträge Shipping 14](#_Toc532072868)
+[Abbildung 10 Datenbankeinträge Shipping 14](#_Toc532072868)
 
-[Abbildung 12 Datenbankeinträge Inventory 14](#_Toc532072869)
+[Abbildung 11 Datenbankeinträge Inventory 14](#_Toc532072869)
 
 Selbständigkeitserklärung 
 ==========================
