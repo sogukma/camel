@@ -236,6 +236,8 @@ Die Funktionalität über alle Microservices hinweg ist sehr simpel gehalten.
 
 -   Shipping: «schickt Bestestellung ab»
 
+![](diagrams/UseCases.png)
+
 Abbildung 2 UseCase Diagramm
 
 Domain-Objekte
