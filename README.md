@@ -8,6 +8,19 @@ eine Zahlung durchgeführt und die Bestellung geliefert wird.
 
 Der Auftragnehmer ist die Gruppe «Pretzel».
 
+Grober Ablauf des Programms
+===========================
+
+Wenn im Browser der Link <https://eshop3.herokuapp.com/order/> eingegeben wird,
+wird eine Bestellung abgegeben, welcher dann mithilfe Camels automatisch eine
+Zahlung, Lieferung und Kommissionierung auslöst.
+
+Auf der folgenden Seite ist die gesamte Camel-Route aufgeführt.
+
+![](media/e65fce0146867a3e208c83cec132dc60.tmp)
+
+Abbildung 1 gesamte Camel-Route
+
 Ablageort
 =========
 
@@ -67,6 +80,9 @@ Die Microservices befinden sich auf Heroku auf folgenden Links:
             0bb99d1c62cf0d9b11e6e533d82ab968890660bcf583412eccdd6e37b6272aec
 
 -   Camel-Route (https://camel.herokuapp.com/)
+
+-   **Notiz: Ausführung des Programms**
+Das Programm sollte ausschliesslich auf Heroku ausgeführt werden. Wenn es lokal ausgeführt wird, werden nämlich trotzdem Services auf Heroku angesprochen, wobei kann es zu Problemen wegen "zu vielen" Zugriffen auf die Datenbank kommen kann.
 
 GitHub-Repositories
 -------------------
@@ -202,18 +218,6 @@ aufgeführt:
 
 Detailliere Dokumentation zu den Klassen sind dem SourceCode zu entnehmen.
 
-Grober Ablauf des Programms
-===========================
-
-Wenn im Browser der Link <https://eshop3.herokuapp.com/order/> eingegeben wird,
-wird eine Bestellung abgegeben, welcher dann mithilfe Camels automatisch eine
-Zahlung, Lieferung und Kommissionierung auslöst.
-
-Auf der folgenden Seite ist die gesamte Camel-Route aufgeführt.
-
-![](media/e65fce0146867a3e208c83cec132dc60.tmp)
-
-Abbildung 1 gesamte Camel-Route
 
 Use-Cases
 =========
